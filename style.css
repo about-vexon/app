@@ -1,0 +1,240 @@
+/* ====== پایه و تنظیمات ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* ====== دارک مود ====== */
+body.dark {
+    background: radial-gradient(circle at 30% 10%, #1a1a2e 0%, #0b0b0b 80%);
+    color: #ffffff;
+}
+
+/* ====== لایت مود ====== */
+body.light {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+    color: #0f172a;
+}
+
+/* ====== دکمه تغییر تم ====== */
+.theme-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+body.dark .theme-btn {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: #a855f7;
+    color: #a855f7;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+body.light .theme-btn {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+    color: #0284c7;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* ====== کانتینر چت ====== */
+.chat-container {
+    width: 100%;
+    max-width: 500px;
+    height: 80vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+body.dark .chat-container {
+    background: rgba(20, 20, 30, 0.9);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+}
+
+body.light .chat-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+}
+
+/* ====== هدر چت ====== */
+.chat-header {
+    padding: 15px;
+    border-bottom: 1px solid;
+}
+
+body.dark .chat-header {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+body.light .chat-header {
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+body.dark .avatar {
+    background: linear-gradient(135deg, #a855f7, #4f2b6e);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+body.light .avatar {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.online-status {
+    font-size: 12px;
+    color: #22c55e;
+}
+
+/* ====== پیام‌ها ====== */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* پیام‌های خودی */
+.self {
+    align-self: flex-end;
+}
+
+body.dark .self {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: white;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+body.light .self {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    color: white;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* پیام‌های دیگران */
+.other {
+    align-self: flex-start;
+}
+
+body.dark .other {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: white;
+}
+
+body.light .other {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #0f172a;
+}
+
+/* ====== ورودی پیام ====== */
+.chat-input-area {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid;
+}
+
+body.dark .chat-input-area {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+body.light .chat-input-area {
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+input {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid;
+    outline: none;
+    font-size: 14px;
+}
+
+body.dark input {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: white;
+}
+
+body.light input {
+    background: white;
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #0f172a;
+}
+
+.send-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+body.dark .send-btn {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+body.light .send-btn {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}

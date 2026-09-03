@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeXAPP - Secure Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+    <!-- دکمه تغییر تم -->
+    <div class="theme-toggle-container">
+        <button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+    </div>
+
+    <!-- ساختار اصلی چت -->
+    <div class="chat-container">
+        
+        <!-- هدر چت -->
+        <div class="chat-header">
+            <div class="user-info">
+                <div class="avatar">V</div>
+                <div>
+                    <h2>VeXAPP</h2>
+                    <p class="online-status">Online</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- محل نمایش پیام‌ها -->
+        <div class="chat-messages" id="chat-messages">
+            <!-- پیام‌ها اینجا ساخته می‌شوند -->
+        </div>
+
+        <!-- ورودی پیام -->
+        <div class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+            <button id="send-btn" class="send-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13"></path>
+                    <path d="M22 2L15 22L11 13L2 9L22 2z"></path>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
