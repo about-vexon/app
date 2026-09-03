@@ -94,3 +94,4 @@ messageInput.addEventListener('keydown', (e) => {
         sendMessage();
     }
 });
+const socket = io('https://app-09wc.onrender.com');
