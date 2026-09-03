@@ -11,8 +11,8 @@ const io = socketIo(server, {
     }
 });
 
-// این خط خیلی مهم است: فایل‌های استاتیک (HTML, CSS, JS) را در دسترس قرار می‌دهد
-app.use(express.static(__dirname)); 
+// این خط باعث می‌شود فایل‌های HTML, CSS, JS در دسترس باشند
+app.use(express.static(__dirname));
 
 // وقتی کاربری به سرور وصل می‌شود
 io.on('connection', (socket) => {
